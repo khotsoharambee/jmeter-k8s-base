@@ -39,6 +39,9 @@ RUN curl ${CURL_OPTS} --location --output "${JMETER_PLUGIN_PATH}" "${JMETER_PLUG
 
 RUN curl ${CURL_OPTS} --location --output "${JMETER_INSTALLATION_PATH}/lib/jolokia-java-agent.jar"  "https://search.maven.org/remotecontent?filepath=org/jolokia/jolokia-jvm/1.6.2/jolokia-jvm-1.6.2-agent.jar"
 
+# Install mysql-connector plugin
+RUN curl ${CURL_OPTS} --location --output "${JMETER_INSTALLATION_PATH}/lib/mysql-connector-java-5.1.44.jar"  "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.44/mysql-connector-java-5.1.44.jar"
+
 ## Setting users &&  directory and right
 RUN mkdir /report &&  \
     addgroup jmeter && \
